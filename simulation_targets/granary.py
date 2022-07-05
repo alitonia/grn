@@ -1,7 +1,7 @@
 from simulation_targets.history import History
 
 
-class Granary:
+class _Granary:
 	def __init__(self, environment):
 		self._temperature = environment.temperature
 		self._humidity = environment.humidity
@@ -25,11 +25,11 @@ class Granary:
 		self._humidity = humidity
 
 
-class SmallGranary(Granary):
+class SmallGranary(_Granary):
 	pass
 
 
-class BigGranary(Granary):
+class BigGranary(_Granary):
 	def __init__(self, environment):
 		super().__init__(environment)
 		self.temperature_history = History()
